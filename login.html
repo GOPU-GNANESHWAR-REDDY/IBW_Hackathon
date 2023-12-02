@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: 'Saira Semi Condensed', sans-serif;
+      background-color: #39393B;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #800000;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 2em;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+   .navigation-links {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  margin-top: 20px; /* Adjust the margin based on your design */
+}
+
+.navigation-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+
+.line-after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      max-width: 150px;
+      border-radius: 50%;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 6px;
+      font-size: 1em;
+    }
+
+    .login-as-dropdown {
+      display: inline-block;
+      width: 100%; /* Full width for the dropdown */
+      margin-bottom: 20px;
+    }
+
+    .username-field,
+    .password-field {
+      width: 100%; /* Full width for the input fields */
+    }
+
+    button, .terms-button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.2em;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .terms-button {
+      background-color: #3498db;
+    }
+
+    button:hover, .terms-button:hover {
+      background-color: #45a049;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.1em;
+    }
+
+    .testing-tag {
+      display: block;
+      margin-top: 20px;
+      color: #999;
+      font-size: 0.9em;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Venture Capital Funding Brokerage</h1>
+</div>
+  </div>
+  <div class="navigation-links">
+    <a href="#">Home</a>
+    <a href="#">Discover</a>
+    <a href="#">About</a>
+    <a href="#">Guidelines</a>
+    <a href="#">Implementation</a>
+    <a href="#">Result</a>
+    <a href="#">Support</a>
+    <a href="#">Team</a>
+    <a href="#">Contact</a>
+  </div>
+
+<div class="login-container">
+  <div class="logo-container">
+    <img class="logo" src="./logo.jpeg" alt="Venture Capital Fund Brokerage">
+
+  <div class="form-group">
+    <label for="login-as">Login As:</label>
+    <div class="login-as-dropdown">
+      <select id="login-as">
+        <option value="venture">Venture</option>
+        <option value="company">Company</option>
+        <option value="individual">Individual</option>
+        <option value="fund-manager">Fund Manager</option>
+        <option value="evaluator">Evaluator</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" class="username-field" placeholder="Enter your username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" class="password-field" placeholder="Enter your password">
+  </div>
+  <button onclick="login()">Login</button>
+  <a href="#" onclick="showSignup()">Sign Up</a>
+  <a href="#" onclick="showTerms()">Terms and Conditions</a>
+
+  <!-- Testing Tag -->
+  <p class="testing-tag">For testing purposes, use USERNAME: internet, PASSWORD: password</p>
+</div>
+
+<script>
+  function login() {
+    var loginAs = document.getElementById('login-as').value;
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Testing credentials
+    if (username.toLowerCase() === 'internet' && password === 'password') {
+      // Check the selected option and redirect immediately
+      if (loginAs === 'venture') {
+        window.location.href = './venture.html';
+      } else if (loginAs === 'company') {
+        window.location.href = './investor.html';
+      } else if (loginAs === 'individual') {
+        window.location.href = './individual.html';
+      } else if (loginAs === 'fund-manager') {
+        window.location.href = './fund_manager.html';
+      }
+    } else {
+      // In a real-world scenario, you would send the data to the server for authentication.
+      // For demonstration purposes, you can display an alert for unsuccessful login.
+      alert('Login unsuccessful. Use the testing credentials provided.'); 
+    }
+  }
+
+  function showSignup() {
+    // You can implement the logic to show the sign-up form or navigate to a sign-up page.
+    alert('Signing Up...');
+  }
+
+  function showTerms() {
+    // You can implement the logic to show terms and conditions.
+    alert('Directing Terms and Conditions...');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "IBW_Hackathon_backend": {
+      "candid": "src/IBW_Hackathon_backend/IBW_Hackathon_backend.did",
+      "package": "IBW_Hackathon_backend",
+      "type": "rust"
+    },
+    "IBW_Hackathon_frontend": {
+      "dependencies": [
+        "IBW_Hackathon_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/IBW_Hackathon_frontend/src/index.html"
+      },
+      "source": [
+        "src/IBW_Hackathon_frontend/assets",
+        "dist/IBW_Hackathon_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

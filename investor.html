@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    #menu {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      width: 300px; /* Increased width */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #menu h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #menu a {
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 15px;
+      cursor: pointer;
+      font-size: 20px; /* Increased font size */
+    }
+
+    #content {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #general,
+    #settings,
+    #documents,
+    #wallet,
+#sections {
+      display: none;
+      margin-top: 20px;
+    }
+
+    h2 {
+      color: #566573;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* Adjust the width and height for the input fields, select, and textarea */
+    #company-name,
+    #company-address,
+    #venture-type,
+    #business-plan,
+    #company-description,
+    #registration-number,
+    #company-contacts,
+    #owners-leadership,
+    #financial-information,
+    #operational-details,
+    #technologies,
+    #domains,
+    #competitors {
+      margin-bottom: 10px; /* Added spacing between fields */
+      padding: 8px; /* Increased padding */
+      width: 100%; /* Full width */
+      border: 2px solid #333; /* Increased border thickness */
+      border-radius: 5px; /* Added border radius for a softer look */
+    }
+
+    #company-contacts,
+    #owners-leadership,
+    #financial-information,
+    #operational-details,
+    #technologies,
+    #domains,
+    #competitors {
+      height: 100px; /* Increased height for textarea */
+    }
+
+    /* Style for file upload input */
+    .file-input {
+      margin-bottom: 15px; /* Added spacing between fields */
+      padding: 10px;
+      width: 100%;
+      border: 2px solid #333;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="menu">
+    <h1>Company Investor</h1>
+    <a href="#" onclick="showContent('general')">General</a>
+    <a href="#" onclick="showContent('settings')">Settings</a>
+    <a href="#" onclick="showContent('documents')">Documents</a>
+    <a href="#" onclick="showContent('wallet')">wallet</a>
+  </div>
+
+  <div id="content">
+    <h2>Welcome to your VCFB</h2>
+    
+    <div id="general">
+      <h3 class="section-title">General</h3>
+      <!-- Add input fields for company name and address -->
+      <label for="company-name">Company Name:</label>
+      <input type="text" id="company-name" name="company-name">
+
+      <label for="company-address">Company Address:</label>
+      <input type="text" id="company-address" name="company-address">
+
+      <!-- Add dropdown (select) for venture type -->
+      <label for="venture-type">Venture Type:</label>
+      <select id="venture-type" name="venture-type">
+        <option value="sole-proprietorship">Sole Proprietorship</option>
+        <option value="partnership">Partnership</option>
+        <option value="llc">Limited Liability Company (LLC)</option>
+        <option value="corporation">Corporation</option>
+        <option value="s-corporation">S Corporation</option>
+        <option value="nonprofit">Nonprofit Organization</option>
+        <option value="cooperative">Cooperative</option>
+        <option value="franchise">Franchise</option>
+        <option value="joint-venture">Joint Venture</option>
+        <option value="lp">Limited Partnership (LP)</option>
+        <option value="pc">Professional Corporation (PC)</option>
+      </select>
+
+      <!-- Add textarea for business plan -->
+      <label for="business-plan">Business Plan:</label>
+      <textarea id="business-plan" name="business-plan"></textarea>
+
+      <!-- Add textarea for company description -->
+      <label for="company-description">Company Description:</label>
+      <textarea id="company-description" name="company-description"></textarea>
+
+      <!-- Additional fields -->
+      <label for="registration-number">Registration Number:</label>
+      <input type="text" id="registration-number" name="registration-number">
+
+      <label for="company-contacts">Company Contacts Information:</label>
+      <textarea id="company-contacts" name="company-contacts"></textarea>
+
+      <label for="owners-leadership">Owners & Leadership:</label>
+      <textarea id="owners-leadership" name="owners-leadership"></textarea>
+
+      <label for="financial-information">Financial Information:</label>
+      <textarea id="financial-information" name="financial-information"></textarea>
+
+      <label for="operational-details">Operational Details:</label>
+      <textarea id="operational-details" name="operational-details"></textarea>
+
+      <label for="technologies">Technologies:</label>
+      <textarea id="technologies" name="technologies"></textarea>
+
+      <label for="domains">Domains:</label>
+      <textarea id="domains" name="domains"></textarea>
+
+      <label for="competitors">Competitors:</label>
+      <textarea id="competitors" name="competitors"></textarea>
+    </div>
+    
+    <!-- ... (your existing HTML code) ... -->
+
+<div id="settings">
+  <h3 class="section-title">Settings</h3>
+
+  <label for="language">Language:</label>
+  <select id="language" name="language">
+    <option value="english">English</option>
+    <option value="spanish">Spanish</option>
+    <option value="french">French</option>
+    <!-- Add more language options as needed -->
+  </select>
+
+  <label for="theme">Theme:</label>
+  <select id="theme" name="theme">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+
+  <label for="accessibility">Accessibility:</label>
+  <input type="checkbox" id="accessibility" name="accessibility">
+  <label for="accessibility">Enable Accessibility</label>
+
+  <label for="notifications">Notifications:</label>
+  <input type="checkbox" id="notifications" name="notifications">
+  <label for="notifications">Enable Notifications</label>
+
+  <label for="controls">Controls:</label>
+  <select id="controls" name="controls">
+    <option value="standard">Standard</option>
+    <option value="alternative">Alternative</option>
+  </select>
+
+  <!-- Add any other settings fields as needed -->
+
+  <p>Additional settings information...</p>
+</div>
+
+<!-- ... (your existing HTML code) ... -->
+
+
+    <div id="documents">
+      <h3 class="section-title">Documents</h3>
+      <div class="file-input">
+        <label for="business-formation-docs">Business Formation Documents (PDF):</label>
+        <input type="file" id="business-formation-docs" name="business-formation-docs" accept=".pdf">
+      </div>
+
+      <div class="file-input">
+        <label for="ownership-leadership-docs">Ownership & Leadership Documents (JPG, PDF):</label>
+        <input type="file" id="ownership-leadership-docs" name="ownership-leadership-docs" accept=".jpg, .pdf">
+      </div>
+
+      <div class="file-input">
+        <label for="registration-licensing-docs">Registration & Licensing Documents (PDF):</label>
+        <input type="file" id="registration-licensing-docs" name="registration-licensing-docs" accept=".pdf">
+      </div>
+
+      <div class="file-input">
+        <label for="financial-docs">Financial Documents (PDF):</label>
+        <input type="file" id="financial-docs" name="financial-docs" accept=".pdf">
+      </div>
+
+      <div class="file-input">
+        <label for="hr-docs">Human Resources Documents (PDF, DOC):</label>
+        <input type="file" id="hr-docs" name="hr-docs" accept=".pdf, .doc">
+      </div>
+
+      <div class="file-input">
+        <label for="contracts-agreements-docs">Contracts & Agreements Documents (PDF):</label>
+        <input type="file" id="contracts-agreements-docs" name="contracts-agreements-docs" accept=".pdf">
+      </div>
+
+      <div class="file-input">
+        <label for="properties-docs">Properties Documents (PDF, JPG):</label>
+        <input type="file" id="properties-docs" name="properties-docs" accept=".pdf, .jpg">
+      </div>
+    </div>
+
+    <div id="wallet">
+      <h3 class="section-title">Wallet to Connect</h3>
+	<label for="connect">Connect:</label>
+  <input type="checkbox" id="connect" name="connect">
+    </div>
+  </div>
+
+  <script>
+    function showContent(section) {
+      // Hide all content sections
+      document.getElementById('general').style.display = 'none';
+      document.getElementById('settings').style.display = 'none';
+      document.getElementById('documents').style.display = 'none';
+      document.getElementById('wallet').style.display = 'none';
+
+      // Show the selected content section
+      document.getElementById(section).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
